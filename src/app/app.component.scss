@@ -1,19 +1,18 @@
 .hero {
-    
     height: 20rem;
     position: relative;
-    background: #191e26;
+    background: #101f26;
 
-    .hero__image {
-        background-size: cover;
+    &__image {
         background-size: 80%;
         height: inherit;
-        background-position: bottom right;
+        background-position: top right;
         background-repeat: no-repeat;
-        background-image: url('~src/assets/images/donna_headshot2.png');
+        background-attachment: fixed;
+        background-image: url("~src/assets/images/donna_headshot.png");
     }
 
-    .hero__content {
+    &__content {
         font-size: 4rem;
         position: absolute;
         color: #e0e0e0;
@@ -21,15 +20,29 @@
         left: 0.5rem;
         z-index: 1001;
         text-shadow: 0 0 7px #262626;
+
+        &.large {
+            font-size: 5rem;
+            color: #ffb74d;
+            bottom: 0;
+            left: 0.5rem;
+            z-index: 1001;
+        }
+    }
+}
+
+.segment {
+    padding: 1rem;
+    background: #142228;
+    height: 20rem;
+
+    &__title {
+        font-size: 1.5rem;
+        color: #ffb74d;
+        text-align: right;
     }
 
-    .hero__content--large {
-        position: absolute;
-        font-size: 5rem;
-        color: #ffb74d;
-        bottom: 0;
-        left: 0.5rem;
-        z-index: 1001;
-        text-shadow: 0 0 7px #262626;
+    &--inverted {
+        background: #101f26;
     }
 }
