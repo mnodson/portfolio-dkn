@@ -1,0 +1,18 @@
+.hero {
+    background-image: url('/assets/images/donna_headshot.jpg');
+    height: 20rem;
+    background-size: cover;
+    position: relative;
+    background-position: center center;
+
+    .hero__title {
+        position: absolute;
+        bottom: -1rem;
+        font-size: 2rem;
+        background: #607d8b;
+        padding: 0.3rem 0.5rem;
+        border-radius: 3px;
+        left: 1rem;
+        color: #263238;
+    }
+}
