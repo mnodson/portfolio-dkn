@@ -1,4 +1,6 @@
-on: push
+on:
+  branches:
+    - main
 
 name: Build Angular
 
@@ -39,11 +41,11 @@ jobs:
           base_href: /portfolio-dkn/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
           deploy_branch: gh-pages # The branch the action should deploy to.
           angular_dist_build_folder: dist/portfolio-donna # The folder where your project is supposed to be after running ng build by the action.
-      - name: Push Build to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "dist/portfolio-donna/*"
-          token: ${{ secrets.TOKEN }}
+      # - name: Push Build to Releases
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "dist/portfolio-donna/*"
+      #     token: ${{ secrets.TOKEN }}
 
 
           
