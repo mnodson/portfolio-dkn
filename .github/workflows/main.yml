@@ -2,7 +2,8 @@ on:
   push:
     # Sequence of patterns matched against refs/heads
     branches-ignore:    
-      - 'main'
+      - main
+      - gh-pages
 
 name: Build Angular
 
