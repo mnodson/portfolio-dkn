@@ -1,4 +1,8 @@
-on: push
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches-ignore:    
+      - 'main'
 
 name: Build Angular
 
