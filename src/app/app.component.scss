@@ -1,18 +1,35 @@
 .hero {
-    background-image: url('~src/assets/images/donna_headshot.jpg');
+    
     height: 20rem;
-    background-size: cover;
     position: relative;
-    background-position: center center;
+    background: #191e26;
 
-    .hero__title {
+    .hero__image {
+        background-size: cover;
+        background-size: 80%;
+        height: inherit;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-image: url('~src/assets/images/donna_headshot.png');
+    }
+
+    .hero__content {
+        font-size: 4rem;
         position: absolute;
-        bottom: -1rem;
-        font-size: 2rem;
-        background: #607d8b;
-        padding: 0.3rem 0.5rem;
-        border-radius: 3px;
-        left: 1rem;
-        color: #263238;
+        color: #e0e0e0;
+        bottom: 4rem;
+        left: 0.5rem;
+        z-index: 1001;
+        text-shadow: 0 0 7px #262626;
+    }
+
+    .hero__content--large {
+        position: absolute;
+        font-size: 5rem;
+        color: #ffb74d;
+        bottom: 0;
+        left: 0.5rem;
+        z-index: 1001;
+        text-shadow: 0 0 7px #262626;
     }
 }
