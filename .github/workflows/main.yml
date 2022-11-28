@@ -5,6 +5,9 @@ on:
 
 name: Build Angular
 
+permissions:
+  contents: write
+
 jobs:
   
   # Build job
@@ -28,20 +31,31 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      # - name: npm install and npm run build
-      #   run: |
-      #     npm i
-      #     npm run build
-      # - name: Setup Pages
-      #   uses: actions/configure-pages@v2
-      - name: Angular Deploy gh-pages Actions
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+
+      - name: npm install and npm run build
+        run: |
+          npm ci
+          npm run build
+
+      # - name: Angular Deploy gh-pages Actions
+      #   uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+      #   with:
+      #     github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
+      #     #build_configuration: staging # The build environment for the app. please look configurations in your angular.json
+      #     base_href: /portfolio-dkn/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+      #     deploy_branch: gh-pages # The branch the action should deploy to.
+      #     angular_dist_build_folder: dist/portfolio-donna # The folder where your project is supposed to be after running ng build by the action.
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
-          #build_configuration: staging # The build environment for the app. please look configurations in your angular.json
-          base_href: /portfolio-dkn/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
-          deploy_branch: gh-pages # The branch the action should deploy to.
-          angular_dist_build_folder: dist/portfolio-donna # The folder where your project is supposed to be after running ng build by the action.
+          folder: dist/portfolio-donna # The folder the action should deploy.
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: gh-pages
+          clean: true
+          force: true
+
+
       # - name: Push Build to Releases
       #   uses: ncipollo/release-action@v1
       #   with:
