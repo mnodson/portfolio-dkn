@@ -4,11 +4,11 @@
     background: #082634;
 
     &__image {
-        background-size: 80%;
+        background-size: contain;
         height: inherit;
-        background-position: bottom right;
+        background-position: right center;
         background-repeat: no-repeat;
-        background-image: url("~src/assets/images/donna_headshot3.png");
+        background-image: url("~src/assets/images/donna_headshot4.png");
     }
 
     &__content {
